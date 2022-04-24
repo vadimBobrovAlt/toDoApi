@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "13b25999-1e8e-4a85-b540-b952e4149cf9",
+		"name": "To Do",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user\",\r\n    \"password\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}login",
+							"host": [
+								"{{url}}login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Вадим Бобров\",\r\n    \"username\": \"user\",\r\n    \"password\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}signUp",
+							"host": [
+								"{{url}}signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "protected",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTA2NDQ0MTYsImlhdCI6MTY1MDY0NDExNiwibmJmIjoxNjUwNjQ0MTE2LCJpZGVudGl0eSI6MX0.EIbVr4YcpmVWkQd1sycRKUawQny-tBU04F4LfQN17EE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}protected",
+							"host": [
+								"{{url}}protected"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tasks",
+			"item": [
+				{
+					"name": "tasks",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjMyMDU5OTU5MTMsImlhdCI6MTY1MDc5NTkxMywibmJmIjoxNjUwNzk1OTEzLCJpZGVudGl0eSI6Mn0.3TSbqg5FEJ4mh0OlHPeH4VRLs57XRRwryV6_C0_5ce0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}tasks",
+							"host": [
+								"{{url}}tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tasks one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjMyMDU5OTU5MTMsImlhdCI6MTY1MDc5NTkxMywibmJmIjoxNjUwNzk1OTEzLCJpZGVudGl0eSI6Mn0.3TSbqg5FEJ4mh0OlHPeH4VRLs57XRRwryV6_C0_5ce0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}tasks/6",
+							"host": [
+								"{{url}}tasks"
+							],
+							"path": [
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjMyMDU5OTU5MTMsImlhdCI6MTY1MDc5NTkxMywibmJmIjoxNjUwNzk1OTEzLCJpZGVudGl0eSI6Mn0.3TSbqg5FEJ4mh0OlHPeH4VRLs57XRRwryV6_C0_5ce0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"test 2\",\r\n    \"description\":\"test describe 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}tasks",
+							"host": [
+								"{{url}}tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjMyMDU5OTU5MTMsImlhdCI6MTY1MDc5NTkxMywibmJmIjoxNjUwNzk1OTEzLCJpZGVudGl0eSI6Mn0.3TSbqg5FEJ4mh0OlHPeH4VRLs57XRRwryV6_C0_5ce0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"is_done\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}tasks/6",
+							"host": [
+								"{{url}}tasks"
+							],
+							"path": [
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjMyMDU4ODk5NjgsImlhdCI6MTY1MDY4OTk2OCwibmJmIjoxNjUwNjg5OTY4LCJpZGVudGl0eSI6MX0.b_H1GkywHKTKbsUoR6a9-Vef1nAdY8s9ppUUYEysPzU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}tasks/2",
+							"host": [
+								"{{url}}tasks"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
